@@ -1,7 +1,12 @@
 self.__BUILD_MANIFEST = {
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/dragy-analyzer//_next/:path+",
+        "destination": "/dragy-analyzer/_next/:path+"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [

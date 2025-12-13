@@ -7,8 +7,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/dragy-analyzer/',
-  assetPrefix: '/dragy-analyzer/',
+  basePath: process.env.PAGES_BASE_PATH,
 };
 
 export default nextConfig;

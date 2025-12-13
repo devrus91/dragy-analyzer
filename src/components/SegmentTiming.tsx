@@ -8,13 +8,7 @@ interface SegmentTimingProps {
 
 export function SegmentTiming({ detailData }: SegmentTimingProps) {
   // Filter and sort segment data
-  const segments = detailData
-    .filter(item => item.name && item.name.startsWith('100-'))
-    .sort((a, b) => {
-      const aSpeed = parseInt(a.name.split('-')[1]);
-      const bSpeed = parseInt(b.name.split('-')[1]);
-      return aSpeed - bSpeed;
-    });
+  const segments = detailData;
 
   if (segments.length === 0) {
     return (
@@ -31,6 +25,7 @@ export function SegmentTiming({ detailData }: SegmentTimingProps) {
           <tr>
             <th className="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Segment</th>
             <th className="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Time (s)</th>
+              {segments[0].speed && <th className="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Speed (s)</th>}
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-800">
@@ -38,6 +33,7 @@ export function SegmentTiming({ detailData }: SegmentTimingProps) {
             <tr key={index}>
               <td className="px-4 py-3 whitespace-nowrap text-sm font-medium text-white">{segment.name}</td>
               <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-300">{segment.time?.toFixed(3) || 'N/A'}s</td>
+                {segment.speed && <th className="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">{segment.speed?.toFixed(3) || 'N/A'}</th>}
             </tr>
           ))}
         </tbody>

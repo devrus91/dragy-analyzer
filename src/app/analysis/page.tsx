@@ -253,8 +253,8 @@ if (!carId) {
 <p className="text-xl">{analysisData.graphData.weatherInfo.main.pressure} hPa</p>
                   </div>
                   {(() => {
-                    const da = analysisData.graphData.weatherInfo.main.daValue !== undefined 
-                      ? analysisData.graphData.weatherInfo.main.daValue 
+                    const da = analysisData.graphData.daValue !== undefined
+                      ? Number(analysisData.graphData.daValue).toFixed(3)
                       : DragyService.calculateDensityAltitude(analysisData.graphData.weatherInfo.main);
                     return da !== null ? (
                       <div className="p-4 bg-gray-900/50rounded-lg">

@@ -14,6 +14,7 @@ export interface DataInfo{
 export interface GraphData {
   dataInfo: DataInfo;
   weatherInfo: WeatherInfo;
+  daValue: number;
   gMax?: number;
   brand?: string;
   model?: string;

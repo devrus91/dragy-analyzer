@@ -119,7 +119,6 @@ if (!carId) {
         {analysisData && (
           <div className="space-y-8">
             <div className="flex justify-betweenitems-center">
-              <h2 className="text-2xl font-bold">Analysis Results</h2>
 <div className="flex gap-2">
                <a href="/dragy-analyzer"
                   className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition"
